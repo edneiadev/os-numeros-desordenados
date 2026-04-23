@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#15233b">
+  <title>Os Números Desordenados</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Os Números Desordenados</div>
+      <div class="toolbar">
+        <button id="sound-toggle" class="icon-button" type="button" aria-label="Ligar ou desligar som">Som: On</button>
+        <button id="fullscreen-toggle" class="icon-button" type="button" aria-label="Tela cheia">Tela cheia</button>
+        <button id="install-button" class="icon-button" type="button" aria-label="Instalar jogo" disabled>Instalar</button>
+      </div>
+    </header>
+
+    <main id="game-shell" class="game-shell" aria-live="polite">
+      <section id="screen-start" class="screen active screen-cover">
+        <img src="./imagens/tela-inicial.jpeg" alt="Tela inicial do jogo Os Números Desordenados" class="screen-bg">
+        <div class="overlay overlay-start">
+          <button id="start-button" class="primary-button" type="button">Começar</button>
+        </div>
+      </section>
+
+      <section id="screen-narrative" class="screen">
+        <div class="overlay overlay-panel split-layout">
+          <div class="split-copy">
+            <div class="chapter-tag">Narrativa</div>
+            <p id="narrative-text" class="narrative-text"></p>
+            <button id="narrative-button" class="primary-button" type="button">Continuar</button>
+          </div>
+          <div class="split-media">
+            <img id="narrative-image" src="" alt="" class="split-image">
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-cards" class="screen">
+        <div class="overlay overlay-panel wide">
+          <div class="level-badge" id="cards-level-label">Nível 1</div>
+          <h2>Escolha uma carta para revelar o próximo desafio</h2>
+          <p class="support-text">Resolva 5 desafios corretos para liberar uma pista.</p>
+          <div id="cards-grid" class="cards-grid"></div>
+        </div>
+      </section>
+
+      <section id="screen-question" class="screen">
+        <div class="overlay overlay-panel question-panel">
+          <div class="question-meta">
+            <div id="question-level" class="pill">Nível 1</div>
+            <div id="question-index" class="pill">Questão 1</div>
+            <div id="question-timer" class="pill timer">01:00</div>
+          </div>
+          <div class="card-flip-stage">
+            <div id="question-card" class="question-card">
+              <div class="card-face card-back">
+                <div class="card-back-art">?</div>
+              </div>
+              <div class="card-face card-front">
+                <p id="question-text" class="question-text"></p>
+                <div class="answers">
+                  <button class="answer-button" data-answer=">">&gt;</button>
+                  <button class="answer-button" data-answer="<">&lt;</button>
+                  <button class="answer-button" data-answer="=">=</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-feedback" class="screen screen-cover">
+        <div class="overlay overlay-panel split-layout">
+          <div class="split-copy">
+            <h2 id="feedback-title"></h2>
+            <p id="feedback-text"></p>
+            <button id="feedback-button" class="primary-button" type="button">Continuar</button>
+          </div>
+          <div class="split-media">
+            <div id="feedback-visual" class="feedback-visual"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-final" class="screen">
+        <div class="overlay overlay-panel split-layout final-layout">
+          <div class="split-copy">
+            <div class="chapter-tag">Desafio Final</div>
+            <h2>Digite a senha secreta</h2>
+            <p class="support-text">Use as pistas conquistadas ao longo dos níveis.</p>
+            <div id="clues-list" class="clues-list"></div>
+            <form id="final-form" class="final-form">
+              <input id="final-input" type="text" inputmode="text" maxlength="5" autocomplete="off" placeholder="_____"
+                aria-label="Senha secreta com 5 caracteres">
+              <button class="primary-button" type="submit">Desbloquear cidade</button>
+            </form>
+          </div>
+          <div class="split-media split-media-decor">
+            <div class="final-visual">SENHA</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-ending" class="screen screen-cover">
+        <div class="overlay overlay-panel split-layout">
+          <div class="split-copy">
+            <h2 id="ending-title"></h2>
+            <p id="ending-text"></p>
+            <button id="restart-button" class="primary-button" type="button">Jogar novamente</button>
+          </div>
+          <div class="split-media">
+            <div id="ending-visual" class="feedback-visual"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

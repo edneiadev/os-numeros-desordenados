@@ -1,0 +1,16 @@
+{
+  "name": "Os Números Desordenados",
+  "short_name": "Numeros",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#09111f",
+  "theme_color": "#15233b",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "./imagens/icone.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
